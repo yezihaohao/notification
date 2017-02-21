@@ -12,9 +12,9 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
 	console.log('a user connected');
-	socket.on('login', function(msg){
+	socket.on('notification', function(msg){
 		console.log(msg);
-	 	io.emit('login', msg);
+	 	io.emit('notification', msg);
 	});
 	
 	socket.on('disconnect', function(){
